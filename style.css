@@ -1,0 +1,33 @@
+#header{
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+#aTags{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 80em;
+    margin-right: 10em;
+}
+
+#main{
+    /*display: flex;
+    justify-content: space-between;*/
+}
+
+.card{
+    border: 2px solid black;
+    display: flex;
+    margin: 200px;
+    width: auto;
+    height: auto;
+}
+
+.inlineBlock{
+    display: inline-block;
+}
+
+.block{
+    display:block;
+}
