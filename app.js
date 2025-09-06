@@ -1,33 +1,37 @@
 let main = document.querySelector("#main");
-let div1 = document.querySelector("#titleimg");
+let cardContainer = document.querySelector("#card-container");
 let url = "https://api.jikan.moe/v4/anime";
 
 function createTitle(title) {
   const h1 = document.createElement("h1");
   h1.textContent = title;
-  h1.classList.add("inlineBlock");
+  h1.classList.add("title");
   return h1;                // just return, don't append yet
 }
 
-async function getAndupdateTitles(){
+async function loadAnimeCards(){
     await fetchAnimeInfo().then((data) => {
-    appendTitles(data)
+    //appendTitles(data)
     })
 }
 
 function createImage(src) {
   const img = document.createElement("img");
   img.src = src;
-  img.classList.add("block");
+  img.classList.add("img");
   return img;               // just return, don't append yet
 }
 
 function animeCard(imgEl, h1El) {
+  //const cardContainer = document.createElement("div");
+  //cardContainer.classList.add("cardContainer");
   const div = document.createElement("div");
   div.classList.add("card");
+  //cardContainer.append(div);
   div.appendChild(imgEl);
   div.appendChild(h1El);
   main.appendChild(div);
+  cardContainer.appendChild(div);
 }
 
 async function fetchAnimeInfo() {
@@ -45,4 +49,4 @@ async function fetchAnimeInfo() {
   }
 }
 //animeCard();
-getAndupdateTitles();
+loadAnimeCards();
